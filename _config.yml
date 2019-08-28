@@ -1,57 +1,75 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Basic
+title: 马轩
+subtitle: 个人主页
+description: 欢迎来到我的个人站~
+# 头像里面的标题
+avatarTitle: 马车干
+# 头像里面的描述
+avatarDesc: 个人分享
+url: "https://basicbuttons.github.io/"
 
-title: 马轩的个人主页
-email: 18839552597@163.com
-phone: 18839552597(请不要给我打骚扰电话！！！)
-country: 中国
-state: 黑龙江省
-city: 哈尔滨市 
-street_address: 西大直街92号哈尔滨工业大学
-description: >- # this means to ignore newlines until "baseurl:"
- 该网页用于分享马轩同学在心情、学习以及生活等方方面面的分享（有很多时候看上去会荒诞不经呀！），however 开心就好！
-landing-title: 欢迎来到马轩的个人主页。
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  basicButtons
+# Comment
+comment:
+    disqus: basicButtons
+    # gitment: xxx // 需要修改 comments.html中的client_id和client_secret
+    # uyan: 2143225  # 有言id,登录有言官网申请
 
-# Build settings
-theme: fortyl-feed
+# Social
+social:
+    #weibo: 5
+    github: basicButtons
+    # zhihu: panpanleopard
+    # juejin: xxx
+    #jianshu: 2ada30d8d0f7
+    # twitter: 
+    mail: 18839552597@163.com
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
+
+# 百度统计 
+# 使用博客模板请去掉或者更换 id 
+baidu:
+    id: xxxx  
+
+# Google Analytics
+# 使用博客模板请去掉或者更换 id
+ga:
+    id: xxxx  
+    host: auto  
+
+
+# 《----------------- 上面的信息修改成你自己的 ---------------------------》
 #
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
 #
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+#  _post/ 下的文章更换成你自己的文章
+#  帮忙star一下，感谢~😆 地址： https://github.com/leopardpan/leopardpan.github.io
+#
+#
+# 《--------------- 下面的信息可以自行选择是否修改 ------------------------》
+
+
+permalink: /:year/:month/:title/
+# Format
+highlighter: rouge
+
+textColor: #FF0000
+
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: clear
+
+# The blog button should not be removed.
+blog_button:
+    title: 博客主页
+
+# Navigation buttons in the front page.s
+nav:
+    - {title: 所有文章, description: archive, url: '/archive'}   
+    - {title: 标签, description: tags, url: '/tags'}      
+    - {title: 关于我, description: about, url: '/about'}      
+    
+
+# Pagination
+gems: [jekyll-paginate,jekyll-sitemap]
+paginate: 20
+paginate_path: "page/:num/"
+
+
