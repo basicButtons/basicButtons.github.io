@@ -27,6 +27,7 @@ city: 哈尔滨市
 street_address: 西大直街92号哈尔滨工业大学
 description: >- # this means to ignore newlines until "baseurl:"
  该网页用于分享马轩同学在心情、学习以及生活等方方面面的分享（有很多时候看上去会荒诞不经呀！），however 开心就好！
+landing-title: 欢迎来到马轩的个人主页。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
