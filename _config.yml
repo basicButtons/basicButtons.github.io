@@ -20,6 +20,11 @@
 
 title: 马轩的个人主页
 email: 18839552597@163.com
+phone: 18839552597(请不要给我打骚扰电话！！！)
+country: 中国
+state: 黑龙江省
+city: 哈尔滨市 
+street_address: 西大直街92号哈尔滨工业大学
 description: >- # this means to ignore newlines until "baseurl:"
  该网页用于分享马轩同学在心情、学习以及生活等方方面面的分享（有很多时候看上去会荒诞不经呀！），however 开心就好！
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -28,9 +33,7 @@ twitter_username:
 github_username:  basicButtons
 
 # Build settings
-theme: forty
-plugins:
-  - jekyll-feed
+theme: fortyl-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
