@@ -12,4 +12,4 @@ tags: 心情
 
 ​		新的学期就要开始了。大家一起加油呀！！！
 
-![IMG_20190827_161122](/Users/maxuan/Desktop/leopardpan.github.io-master/images/IMG_20190827_161122.jpg)
+![IMG_20190827_161122](/images/IMG_20190827_161122.jpg)
