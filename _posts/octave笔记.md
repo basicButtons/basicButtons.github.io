@@ -1,0 +1,75 @@
+## octave笔记
+
+mean std函数：
+
+```octave
+M = mean(A);%返回沿数组中不同纬的元素的平均值
+M = mean(A,2);%返回矩阵中每一行的均值
+y = std(X);%算出x的标准差，此处X可以是一个matrix也可以是一个vector。
+如果X是vector,则y是算X的标准偏差。
+如果X是matrix,则y是个vector，存放的是每一列/行的标准偏差。std(x,flag,dim)
+flag 表示计算标准差时是要除以n还是n-1
+flag==0 %表示除以n-1
+flag==1 %表示除以n
+dim表示维数
+dim==1 %表示按照列分
+dim==2 %表示按照行分
+默认的格式就是dim(x,0,1);
+```
+
+bsxfun 函数：
+
+```octave
+bsxfun(@function,A,B):根据function的不同对矩阵A和B进行运算
+@plus Plus
+@minus Minus
+@times Array multiply %这个就是对应位置相乘，不是矩阵相乘。不足的位置自动补齐
+>> A1
+A1 =
+   1
+   1
+>> B1
+B1 =
+   1   1
+>> bsxfun(@times,A1,B1)
+ans =
+   1   1
+   1   1
+>> bsxfun(@times,B1,A1)
+ans =
+   1   1
+   1   1
+>> A1 = [1 1;1 1]
+A1 =
+   1   1
+   1   1
+>> B1 = [2 2;2 2]
+B1 =
+   2   2
+   2   2
+>> bsxfun(@times,B1,A1)
+ans =
+   2   2
+   2   2
+>> bsxfun(@times,A1,B1)
+ans =
+   2   2
+   2   2
+@rdivideRight array divide %这个是左边除以右边，左边的做分子
+@ldivideLeft array divide %这个是右边除以左边，右边的做分子
+
+```
+
+plot函数
+
+```octave
+x = [0;0.01;10];
+y = sin(x);
+plot(x,y);
+xlabel("X"); %这个是x轴标签
+ylabel("Sin(x)"); %这个是y轴标签
+title('Sin(x) graph'); %这个是标题
+grid on;  %这个是加上表格
+axis equal;  %这个是让x，y轴相同。
+```
+

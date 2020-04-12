@@ -1,0 +1,54 @@
+$\hat{y} = -37+9.1x$
+$$
+\hat{y} = 25+6.1max(0,x-13)-3.1max(0,13-x)
+$$
+$ozone = 5.2\\   \ \ \ \ \ \ +0.93max(0,temp-58)\\   \ \ \ \ \ \ -0.64max(0,temp-68)\\   \ \ \ \ \ \ -0.064max(0,234-ibt)\\   \ \ \ \ \ \ -0.016max(0,wind-7)max(0,200-vis)$
+
+
+
+
+
+
+
+形式：$\hat{f}(x)=\sum\limits _ { i = 1 } ^ { k } c _ { i } B _ { i } ( x )$
+
+$\lbrack \pm ( x _ { i } - c ) \rbrack _ { + }  $
+$$
+term_{34}
+$$
+
+$$
+h_m(X) \quad m =1,2.....M
+$$
+
+$$
+h _ { m } ( X ) \cdot ( X _ { j } - t )_+ \qquad \qquad { h _ { t } ( X ) \cdot ( t - X _ { j } ) } +
+$$
+
+$$
+J ( \theta ) = \frac { 1 } { m } \sum\limits _ { i = 1 } ^ { m }(\hat{y}-y)^2  + \frac { \lambda } { 2 m } \sum\limits _ { j = 1 } ^ { n }\theta_j^2
+$$
+
+
+$$
+GCV = \frac {RSS}{N\times(1-\frac{N(\lambda)}{N^2})}
+$$
+
+$$
+N(\lambda) = {number \ of \ Mars \ terms}\ + \ (penalty)·((number \ of \ Mars \ terms) − 1 )/2
+$$
+
+对于单输入线性回归
+$$
+Y_i ～h_l(X)(X_i - t_r)
+$$
+不考虑截距的情况下，记：
+$$
+\hat\beta^{(r)}\ = \ (\sum\limits_{i=1}^{N}h_l(X)^2(X_i-t_r)^2)^{-1}(\sum\limits_{i=1}^{N}h_l(X)(X_i-t_r)Y_i)=W_rZ_r
+$$
+计算量为O(N),若首先从最右端的节点开始计算，则：
+$$
+\hat{\beta}^{(r)}  = (W_{r+1}+h_l^2(X)(X_{i}-t_r)^2)^{-1}(Z_{r+1}+h_l((X)(X_{i}-t_r)Y_{r+1}))
+$$
+也就是说，我们用了O(1)的更新操作，将原来O(N)的操作给替换了。
+
