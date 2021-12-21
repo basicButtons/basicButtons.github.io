@@ -90,3 +90,58 @@ Provider 接收一个 `value` 属性，传递给消费组件。一个 Provider R
 然后再去声明一个 reducer 函数，这个的话就可以使用useReducer了，返回state和dispatch。
 
 之后将 dispatch 放在 context.provider 的 store 中 这样每一个子组件都可以获取到修改方法的 dispatch 方法了，就可以在不同组件之间使用这些数据和方法了。问题目前就在于state了，其实state放在单独的 context 中，每一个 state 的改变都会影响到所有的 context 的消费情况，这样的情况下，我们就可以将 state 分别放置在不同的 context 中，这样的话，就可以更大程度上减少重新渲染造成的性能问题。
+Provider 接收一个 `value` 属性，传递给消费组件。一个 Provider React 组件可以和多个消费组件有关系。多个Provide也可以嵌套使用，里层的会覆盖外层的数据。
+
+当 `Provider`的`value`值发生改变时，它内部的所有消费组件都会重新渲染。Provider及其内部 consumer都不受制于 `shouldComponentrUpdate` 函数，因此当consumer组件在其祖先组件退出更新的情况下才会更新。
+
+新旧值之间的比较是通过Object.is 来进行比较的。
+
+#### Class.contextType
+
+挂载在 class 上的 `contextType` 属性会被重新赋值为一个由 `React.createContext()` 创建的 `Context ` 对象。这能让你使用 `this.context` 来消费最近 `Context` 上的那个值。你可以在任何生命周期访问到它，包括render函数中。
+
+```
+1.挂载卸载过程
+	1.1 constructor
+	1.2 componentWillMount
+	1.3 componentDidMount
+	1.4 componentWillUnmount
+2.更新过程
+	2.1 componentWillReceiveProps(nextProps)
+	2.2 shouldComponentUpdate(nextProps,nextState)
+	2.3 componentWillUpdate(nextProps,nextState)
+	2.4 componentDidUpdate(preProps,preState)
+	2.5 render()
+```
+
+```
+export default class Index extends Component {
+    render() {
+        let value = this.context
+        console.log(value)
+        return (
+            <div>
+                12312
+            </div>
+        )
+    }
+}
+Index.contextType = myContext;
+```
+
+值得注意的是：Function components do not support contextType. 这个contextType只有在class组建上才能使用。
+
+#### Context.comsumer
+
+```
+<MyContext.Consumer>
+  {value => /* 基于 context 值进行渲染*/}
+</MyContext.Consumer>
+```
+
+这里面React 组件可以订阅到 context 变更。这能让我们在函数组件中完成订阅context。对于上层没有Provider的时候，就会调用 React.createContext函数中传入的那个defaultValue。
+
+
+
+
+
